@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: YouYuan, Helvetica;
+  --MaxWidth: 1440px;
+  --MinWidth: 1440px;
+  --BoxShadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  --HomeFirstLineHeight: 400px;
+
+  user-select: none;
+
+  /* transition: all 0.2s; */
+
+  /* 设置过渡属性 */
+  /* transition-property: all; */
+  /*设置过渡时长 */
+  /* transition-duration: 0.7s; */
+  /* 过渡变化速率 */
+  /* transition-timing-function: linear; */
+  /* 过渡延时1s */
+  /* transition-delay: 0s; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(./assets/imgs/preview.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-y: hidden;
+}
+/*定义滚动条宽 */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+/*定义滚动条轨道 */
+body::-webkit-scrollbar-track {
+  opacity: 0;
+}
+/*定义滑块*/
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(175, 175, 175, 0.5);
+}
+
+#app {
+  max-width: var(--MaxWidth);
+  min-width: var(--MinWidth);
+  text-align: center;
+  position: flex;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: aliceblue; */
+}
+
+.ffff {
+  border: 1px solid red;
+  color: aliceblue;
+  color: black;
+  color: aqua;
+  color: cornflowerblue;
+}
+
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.3s;
+}
