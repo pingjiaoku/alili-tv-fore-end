@@ -3,7 +3,12 @@
     <div class="card-video-cover">
       <!-- <div class="card-video-cover" style=""> -->
       <div>
-        <img fit="cover" :src="props.videoCover" @error="setDefaultCover" />
+        <img
+          ref="refDom"
+          fit="cover"
+          :src="result"
+          @error="setDefaultCover"
+        />
         <div>
           <div class="card-view-count"></div>
           <div class="card-barrage-count"></div>
@@ -22,13 +27,19 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, defineProps } from "vue";
+import { useLazyData } from "/src/utils/use-lazy-data";
 
-const props = defineProps(['videoCover'])
-
+const props = defineProps(["videoCover"]);
 
 const setDefaultCover = (e) => {
   e.target.src = "/src/assets/imgs/img-fail.svg";
 };
+
+const loadPicture = (dom) => {
+  return props.videoCover;
+};
+
+const { refDom, result } = useLazyData(loadPicture);
 
 onMounted(() => {
   // 从后端获取图片案例

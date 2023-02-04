@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref } from "vue";
 import TopNav from "./components/top_nav/TopNav.vue";
 import Home from "./views/home/Home.vue";
 
@@ -40,7 +40,7 @@ const isFixed = ref(false);
   position: fixed;
   bottom: 50px;
   right: 20px;
-  background-color:aliceblue;
+  background-color: aliceblue;
   width: 40px;
   height: 40px;
   border-radius: 50%;

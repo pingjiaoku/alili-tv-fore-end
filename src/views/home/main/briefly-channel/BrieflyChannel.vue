@@ -21,7 +21,7 @@ import VideoCard from '../../../../components/VideoCard/VideoCard.vue'
 
 
 const channels = ref(inject('channel'))
-const videoInfo = ref("http://localhost:8080/common/download?name=0f252364-a561-4e8d-8065-9a6797a6b1d3.jpg")
+const coverList = ref("http://localhost:8080/common/download?name=0f252364-a561-4e8d-8065-9a6797a6b1d3.jpg")
 
 onMounted(() => {
 
