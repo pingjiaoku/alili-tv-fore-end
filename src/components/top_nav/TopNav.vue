@@ -45,8 +45,11 @@ onUnmounted(() => {});
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* background-color: rgba(219, 219, 219, 0.256); */
+  border-bottom: 1px solid rgb(200, 200, 200);
+  border-left: 1px solid rgb(200, 200, 200);
+  border-right: 1px solid rgb(200, 200, 200);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   box-shadow: 0px 15px 10px 0px rgba(0, 0, 0, 0.1);
 
   /* 设置过渡属性 */
@@ -55,8 +58,6 @@ onUnmounted(() => {});
   transition-duration: 0.7s;
   /* 过渡变化速率 */
   transition-timing-function: linear;
-  /* 过渡延时1s */
-  transition-delay: 0s;
 }
 </style>
 

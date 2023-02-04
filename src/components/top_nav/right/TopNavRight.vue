@@ -92,9 +92,7 @@ onUnmounted(() => {});
 
 }
 .icon:active {
-  animation-name: xing;
-  animation-iteration-count: 1;
-  animation-duration: 0.3s;
+  animation: obviously-beat 0.3s;
 }
 .uploadManagerButton {
   margin-left: 10px;
@@ -106,15 +104,6 @@ onUnmounted(() => {});
   font-weight: 400;
 }
 
-@keyframes xing {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.3);
-  }
-}
 </style>
 
 <script>

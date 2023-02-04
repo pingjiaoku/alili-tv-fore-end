@@ -17,24 +17,12 @@
 </template>
 
 <script setup>
-import { ref, onBeforeMount, onMounted, onUnmounted, defineProps } from "vue";
+import { ref, onBeforeMount, onMounted, onUnmounted, defineProps, inject } from "vue";
 
 const props = defineProps(["isOpenGuide"]);
 
-const channel = ref([
-  { id: 1, icon: "#el-icon-fangwu", name: "主页" },
-  { id: 2, icon: "#el-icon-huore", name: "热门" },
-  { id: 3, icon: "#el-icon-dianshijiB", name: "影视" },
-  { id: 4, icon: "#el-icon-erjiB", name: "音乐" },
-  { id: 5, icon: "#el-icon-youxiji", name: "游戏" },
-  { id: 6, icon: "#el-icon-mianshi", name: "美食" },
-  { id: 7, icon: "#el-icon-gou", name: "宠物" },
-  { id: 8, icon: "#el-icon-yuedu", name: "学习" },
-  { id: 9, icon: "#el-icon-xiaochou", name: "搞笑" },
-  { id: 10, icon: "#el-icon-jianshen", name: "运动" },
-  { id: 11, icon: "#el-icon-xingqiu", name: "科普" },
-  { id: 12, icon: "#el-icon-zhifengche", name: "休闲" },
-]);
+const channel = ref(inject('channel'))
+
 const currentChannel = ref(channel.value[0]);
 
 const togglesChannel = (item) => {
@@ -87,15 +75,11 @@ onUnmounted(() => {});
 }
 
 #home-guide-icons > li:hover .icon {
-  animation-name: xing;
-  animation-iteration-count: 1;
-  animation-duration: 0.3s;
+  animation: obviously-beat 0.3s;
 }
 
 #home-guide-icons > li:active {
-  animation-name: xing;
-  animation-iteration-count: 1;
-  animation-duration: 0.3s;
+  animation: obviously-beat 0.3s;
 }
 
 #home-guide-icons span {
@@ -119,15 +103,7 @@ onUnmounted(() => {});
   animation-name: none;
 }
 
-@keyframes xing {
-  0% {
-    transform: scale(1);
-  }
 
-  50% {
-    transform: scale(1.3);
-  }
-}
 </style>
 
 <script>

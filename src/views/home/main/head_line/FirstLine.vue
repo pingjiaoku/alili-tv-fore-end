@@ -4,7 +4,7 @@
     </div>
     <div id="f-line-r">
       <div v-for="item in 6">
-        <div class="f-line-rs">
+        <div class="default-video-card">
           {{ item }}
         </div>
       </div>
@@ -38,18 +38,9 @@ onUnmounted(() => {});
   align-content: space-between;
   justify-content: space-around;
 }
-.f-line-rs {
-  width: 240px;
-  height: 190px;
-  background-color: aqua;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.2s;
-}
-.f-line-rs:hover {
-  transform: scale(1.02);
-  box-shadow: var(--BoxShadow);
-}
+
+
+
 </style>
 <script>
 // 不继承父组件附加的属性

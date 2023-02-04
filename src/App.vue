@@ -1,7 +1,7 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <header id="header-top-nav" class="ffff">
+      <header id="top-nav-view">
         <TopNav :isToHome="isFixed"></TopNav>
       </header>
       <div id="main-views">
@@ -16,7 +16,7 @@
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import TopNav from "./components/TopNav.vue";
+import TopNav from "./components/top_nav/TopNav.vue";
 import Home from "./views/home/Home.vue";
 
 const isFixed = ref(false);
@@ -24,7 +24,7 @@ const isFixed = ref(false);
 </script>
 
 <style scoped>
-#header-top-nav {
+#top-nav-view {
   width: 100%;
   max-width: var(--MaxWidth);
   height: 65px;

@@ -7,6 +7,8 @@
   --MinWidth: 1440px;
   --BoxShadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   --HomeFirstLineHeight: 400px;
+  --BackBaffle: rgba(240, 248, 255, 0.8);
+  --HomePartitionLineHeight: 450px;
 
   user-select: none;
 
@@ -21,6 +23,7 @@
   /* 过渡延时1s */
   /* transition-delay: 0s; */
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -37,14 +40,12 @@ body {
 body::-webkit-scrollbar {
   width: 10px;
 }
-/*定义滚动条轨道 */
 body::-webkit-scrollbar-track {
   opacity: 0;
 }
-/*定义滑块*/
 body::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(175, 175, 175, 0.5);
+  background-color: rgba(175, 175, 175, 0.4);
 }
 
 #app {
@@ -78,3 +79,21 @@ body::-webkit-scrollbar-thumb {
   transform: translateY(0);
   transition: 0.3s;
 }
+
+.default-video-card {
+  width: 240px;
+  height: 190px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.default-video-card:hover {
+  transform: scale(1.02);
+  background-color: aliceblue;
+  box-shadow: var(--BoxShadow);
+}
+.default-video-card:active {
+  animation: slightly-beat 0.3s;
+}
+

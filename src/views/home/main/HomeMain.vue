@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div style="height: 1234px">
+    <div>
       <div id="main-first-line">
         <FirstLine></FirstLine>
       </div>
       <div id="main-other-lines">
-
+        <BrieflyChannel></BrieflyChannel>
       </div>
     </div>
   </div>
@@ -13,7 +13,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import FirstLine from './01_line/FirstLine.vue'
+import FirstLine from './head_line/FirstLine.vue'
+import BrieflyChannel from './briefly-channel/BrieflyChannel.vue'
 
 onMounted(() => {
 })
@@ -29,14 +30,19 @@ onUnmounted(() => {
 
 #main-first-line {
   width: 100%;
-  height: 450px;
+  height: var(--HomePartitionLineHeight);
   position: relative;
-  background-color: aliceblue;
+  background-color: var(--BackBaffle);
   border-radius: 30px;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+#main-other-lines{
+  width: 100%;
+  position: relative;
 }
 </style>
 

@@ -53,6 +53,7 @@ onUnmounted(() => {});
   width: 580px;
   border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 

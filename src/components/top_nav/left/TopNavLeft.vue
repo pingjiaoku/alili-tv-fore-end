@@ -1,7 +1,7 @@
 <template>
   <div class="nav-left">
     <div>
-      <img class="logo" src="../../assets/imgs/font-logo.svg" alt="">
+      <img class="logo" src="../../../assets/imgs/font-logo.svg" alt="">
     </div>
     <div class="guide-icon">
       <el-icon :class="iconRotate" :size="iconSize" :color="iconColor">

@@ -55,13 +55,6 @@ const fixedChange = (data) => {
   emit("update:isFixed", data);
 };
 
-// watch(
-//   () => isFixed.value,
-//   () => {
-//     console.log(isFixed.value);
-//     emit("update:isFixed", isFixed.value);
-//   }
-// );
 </script>
 
 <style scoped>
