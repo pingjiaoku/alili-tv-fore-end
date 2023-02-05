@@ -1,16 +1,19 @@
-import { createApp } from 'vue'
-import './style.css'
-import './style/animation.css'
-import App from './App.vue'
-import * as ElementPlusIconsVue  from '@element-plus/icons-vue';
-import 'default-passive-events'
+import { createApp } from "vue";
+import "./style.css";
+import "./style/animation.css";
+import App from "./App.vue";
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import "default-passive-events";
+import axios from "./assets/lib/request"
 
-const app = createApp(App)
+const app = createApp(App);
+// 在组件中调用：this.$axios
+app.config.globalProperties.$axios = axios
 //全局注册elementplus icon
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  app.component(key, component)
+  app.component(key, component);
 }
-app.provide('channel', [
+app.provide("channel", [
   { id: 1, icon: "#el-icon-fangwu", name: "主页" },
   { id: 2, icon: "#el-icon-huore", name: "热门" },
   { id: 3, icon: "#el-icon-dianshijiB", name: "影视" },
@@ -23,8 +26,8 @@ app.provide('channel', [
   { id: 10, icon: "#el-icon-jianshen", name: "运动" },
   { id: 11, icon: "#el-icon-xingqiu", name: "科普" },
   { id: 12, icon: "#el-icon-zhifengche", name: "生活" },
-  { id: 13, icon: "#el-icon-shishang", name: "时尚" }, 
-  { id: 14, icon: "#el-icon-youxi", name: "娱乐" }, 
-])
+  { id: 13, icon: "#el-icon-shishang", name: "时尚" },
+  { id: 14, icon: "#el-icon-youxi", name: "娱乐" },
+]);
 
-app.mount('#app')
+app.mount("#app");

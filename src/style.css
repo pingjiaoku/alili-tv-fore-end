@@ -10,7 +10,7 @@
   --BackBaffle: rgba(240, 248, 255, 0.8);
   --HomePartitionLineHeight: 450px;
 
-  user-select: none;
+  user-select: none; 
 
   /* transition: all 0.2s; */
 
@@ -24,9 +24,18 @@
   /* transition-delay: 0s; */
 }
 
-
 html {
-  scroll-behavior: smooth;
+  /* 平滑滚动 */
+  scroll-behavior: smooth
+}
+
+
+/* 文本超过长度省略，用于span，需要指定宽度 */
+.text-ellipsis {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden; /*超出的文本隐藏*/
+  text-overflow: ellipsis; /* 溢出用省略号*/
 }
 
 body {
@@ -55,24 +64,13 @@ body::-webkit-scrollbar-thumb {
   position: flex;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.1);
-  /* background-color: aliceblue; */
 }
-
-.ffff {
-  border: 1px solid red;
-  color: aliceblue;
-  color: black;
-  color: aqua;
-  color: cornflowerblue;
-}
-
 
 .hidden {
   visibility: hidden;
   opacity: 0;
   transform: translateY(100px);
 }
-
 .show {
   visibility: visible;
   opacity: 1;
@@ -90,10 +88,12 @@ body::-webkit-scrollbar-thumb {
 }
 .default-video-card:hover {
   transform: scale(1.02);
-  background-color: aliceblue;
+  background-color: #f0f8ff;
   box-shadow: var(--BoxShadow);
 }
 .default-video-card:active {
   animation: slightly-beat 0.3s;
 }
+
+
 

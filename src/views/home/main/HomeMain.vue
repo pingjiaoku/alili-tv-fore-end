@@ -14,7 +14,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import FirstLine from './head_line/FirstLine.vue'
-import BrieflyChannel from './briefly-channel/BrieflyChannel.vue'
+import BrieflyChannel from './briefly-channel/BrieflyChannels.vue'
 
 onMounted(() => {
 })
