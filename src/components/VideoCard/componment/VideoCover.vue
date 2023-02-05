@@ -47,7 +47,7 @@ const { refDom, result } = useLazyData(() => props.videoCover);
 .video-cover > div {
   width: 100%;
   height: 25%;
-  background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.8));
+  background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0));
   color: aliceblue;
   font-size: 16px;
 

@@ -3,7 +3,6 @@
     <ul class="brief-channels">
       <li v-for="channel in channels" :key="channel.id" ref="channelCard">
         <BrieflyChannel :channelId="channel.id"></BrieflyChannel>
-        
       </li>
     </ul>
   </div>
@@ -15,14 +14,6 @@ import BrieflyChannel from "./BrieflyChannel.vue";
 
 const channels = ref(inject("channel"));
 
-
-
-onMounted(() => {
-  // axios
-});
-
-// 卸载定时器之类的
-onUnmounted(() => {});
 </script>
 
 <style scoped>
