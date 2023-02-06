@@ -1,42 +1,33 @@
 <template>
   <div class="card-video">
     <div class="card-video-cover">
-      <VideoCover :videoCover="props.videoCover"></VideoCover>
+      <VideoCover
+        :cover="props.data.coverPath"
+        :viewCount="props.data.viewCount"
+        :bulletCount="props.data.bulletCount"
+        :totalTime="props.data.totalTime"
+      ></VideoCover>
     </div>
     <div>
-      <span class="card-title text-ellipsis" :title="props.videoTitle">
-        {{ props.videoTitle }}
-      </span>
+      <h4 class="card-title text-ellipsis link-blue" :title="props.data.title">
+        {{ props.data.title }}
+      </h4>
       <div>
         <img src="/src/assets/imgs/icon/uploader.svg" />
-        <span>{{ props.videoAuthor }} | {{ dateConversion(testTime) }}</span>
+        <span class="link-blue">
+          <span class="text-ellipsis">{{ props.data.createUserName }}</span>
+          {{ "| " + dateConversion(props.data.createTime) }}
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import VideoCover from "./componment/VideoCover.vue";
 import { dateConversion } from "/src/utils/transformation";
-import axios from "axios";
 
-const testTime = ref();
-
-onMounted(() => {
-  axios.get("/testaxios/test/now").then((res) => {
-    testTime.value = res.data;
-  });
-});
-
-const props = defineProps({
-  videoCover: {},
-  videoTitle: {},
-  videoAuthor: {},
-  videoCreateTime: {},
-});
-
-
+const props = defineProps(["data"]);
 </script>
 
 <style scoped>
@@ -52,7 +43,9 @@ const props = defineProps({
 }
 .card-title {
   width: 95%;
-  font-family: Helvetica;
+  text-align: left;
+  font-weight: 500;
+  font-size: 17px;
 }
 .card-title + div {
   height: 25%;
@@ -64,7 +57,14 @@ const props = defineProps({
   width: 20px;
 }
 .card-title + div > span {
-  font-size: 14px;
+  font-size: 15px;
+
+  display: flex;
+  align-items: baseline;
+}
+.card-title + div .text-ellipsis {
+  font-size: 15px;
+  max-width: 90px;
 }
 </style>
 

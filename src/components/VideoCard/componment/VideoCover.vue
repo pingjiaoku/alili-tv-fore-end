@@ -1,13 +1,14 @@
 <template>
   <div
     class="video-cover"
-    ref="refDom"
     :style="{
       backgroundImage:
-        'url(' + result + '), url(/src/assets/imgs/img-fail.svg)',
+        'url(' +
+        getCover(props.cover) +
+        '), url(/src/assets/imgs/img-fail.svg)',
     }"
   >
-    <div>
+    <div v-if="props.showMassage">
       <div class="video-card__state">
         <img src="/src/assets/imgs/icon/view.svg" />
         <div>{{ numberConversion(props.viewCount) }}</div>
@@ -16,21 +17,29 @@
       </div>
       <div>{{ timeConversion(props.totalTime) }}</div>
     </div>
+    <div>
+      <img src="/src/assets/imgs/icon/play.svg" />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { useLazyData } from "/src/utils/use-lazy-data";
 import { numberConversion, timeConversion } from "/src/utils/transformation.js";
-
 const props = defineProps({
-  videoCover: {},
+  cover: { default: "/src/assets/imgs/img-fail.svg" },
   viewCount: {},
   bulletCount: {},
   totalTime: {},
+  showMassage: { default: true },
 });
 
-const { refDom, result } = useLazyData(() => props.videoCover);
+const getCover = (cover) => {
+  if (cover != "/src/assets/imgs/img-fail.svg") {
+    cover = "/api-req/common/download?name=" + cover;
+  }
+  return cover;
+};
+
 </script>
 
 <style scoped>
@@ -42,9 +51,13 @@ const { refDom, result } = useLazyData(() => props.videoCover);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  cursor: pointer;
+}
+.video-cover:hover > div:last-child {
+  filter: opacity(1);
 }
 
-.video-cover > div {
+.video-cover > div:first-child {
   width: 100%;
   height: 25%;
   background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0));
@@ -57,6 +70,20 @@ const { refDom, result } = useLazyData(() => props.videoCover);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.video-cover > div:last-child {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: opacity(0);
+  transition: all 0.3s;
+}
+.video-cover > div:last-child > img {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .video-card__state {
   display: flex;

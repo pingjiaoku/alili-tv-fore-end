@@ -5,7 +5,7 @@
         <svg class="icon" aria-hidden="true">
           <use :xlink:href="item.icon"></use>
         </svg>
-        <span>{{ item.name }}</span>
+        <span class="link-blue">{{ item.name }}</span>
       </li>
     </ul>
     <div v-else class="current-channel">

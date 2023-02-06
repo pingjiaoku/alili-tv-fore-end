@@ -11,10 +11,8 @@ const numberConversion = (number) => {
 const timeConversion = (time) => {
   let timeStr = ((time % 60) + "").padStart(2, "0");
   let tmp = (time / 60).toFixed();
-  if (tmp > 0) {
-    timeStr = ((tmp % 60) + "").padStart(2, "0") + ":" + timeStr;
-    tmp = (tmp / 60).toFixed();
-  }
+  timeStr = ((tmp % 60) + "").padStart(2, "0") + ":" + timeStr;
+  tmp = (tmp / 60).toFixed();
   if (tmp > 0) {
     timeStr = tmp + ":" + timeStr;
   }
@@ -24,7 +22,7 @@ const timeConversion = (time) => {
 const now = new Date();
 const dateConversion = (date) => {
   if (date == "" || typeof date == "undefined") {
-    return date;
+    return "";
   }
   date = date + "";
   date = date.substring(0, date.indexOf(" "));

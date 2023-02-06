@@ -9,26 +9,17 @@
   --HomeFirstLineHeight: 400px;
   --BackBaffle: rgba(240, 248, 255, 0.8);
   --HomePartitionLineHeight: 450px;
-
   user-select: none; 
 
   /* transition: all 0.2s; */
-
-  /* 设置过渡属性 */
-  /* transition-property: all; */
-  /*设置过渡时长 */
-  /* transition-duration: 0.7s; */
-  /* 过渡变化速率 */
-  /* transition-timing-function: linear; */
-  /* 过渡延时1s */
-  /* transition-delay: 0s; */
 }
-
-html {
-  /* 平滑滚动 */
-  scroll-behavior: smooth
+.link-blue {
+  transition: all 0.2s;
 }
-
+.link-blue:hover {
+  color:#00bfff;
+  cursor: pointer;
+}
 
 /* 文本超过长度省略，用于span，需要指定宽度 */
 .text-ellipsis {
@@ -36,6 +27,13 @@ html {
   white-space: nowrap;
   overflow: hidden; /*超出的文本隐藏*/
   text-overflow: ellipsis; /* 溢出用省略号*/
+  font-family: Helvetica;
+}
+
+
+html {
+  /* 平滑滚动 */
+  scroll-behavior: smooth
 }
 
 body {
@@ -66,7 +64,7 @@ body::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.hidden {
+/* .hidden {
   visibility: hidden;
   opacity: 0;
   transform: translateY(100px);
@@ -76,7 +74,7 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
   transform: translateY(0);
   transition: 0.3s;
-}
+} */
 
 .default-video-card {
   width: 240px;

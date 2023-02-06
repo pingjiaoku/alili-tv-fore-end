@@ -16,10 +16,10 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      "/testaxios": {
+      "/api-req": {
         target: "http://localhost:8080",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/testaxios/, ""),
+        rewrite: (path) => path.replace(/^\/api-req/, ""),
       },
     },
   },

@@ -8,7 +8,7 @@
         <Home id="home" v-model:isFixed="isFixed"></Home>
       </div>
     </el-container>
-    <a href="#" id="to-top-button" :style="{ opacity: isFixed ? '1' : '0' }">
+    <a href="#" title="回到顶部" id="to-top-button" :style="{ opacity: isFixed ? '1' : '0' }">
       <el-icon><ArrowUpBold /></el-icon>
     </a>
   </div>
